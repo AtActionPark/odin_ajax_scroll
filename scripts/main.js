@@ -51,16 +51,30 @@ var movieIDs = [
     'tt0381681', 'tt0070511', 'tt1555149', 'tt0450259', 'tt0367110'
   ];
 var loading = false;
+var counter = 0;
 
 $(document).ready(function(){
-  $('.ajaxtrigger').click(loadMovies);
+  loadMovies(20);
+
+  $(document).scroll(function(){
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    if ((scrollHeight - scrollPosition) / scrollHeight === 0 && loading == false) {
+      loadMovies(10);
+  }
+  })
 })
 
-function loadMovies(){
-  for(var i = 0;i<10;i++){
-    ajaxSearchID(movieIDs[i]);
+function loadMovies(x){
+  for(var i = counter;i<counter+x;i++){
+    if(i>movieIDs.length-1)
+      return;
+    else
+      ajaxSearchID(movieIDs[i]);
   }
+  counter+=x;
 }
+
 
 function ajaxSearchID(id){
   $.ajax({
@@ -96,10 +110,20 @@ function ajaxSearchID(id){
   });
 }
 
-function displayMovie(id){
-  var header =  '<div>' + id.Title + '</div>';
-  header += '<div>' + id.Year + '</div>';
-  $('#result').append('<li>' + header + '</li>');
+function displayMovie(json){
+  var container = document.createElement('li');
+  container.className = "movieContainer ";
+  container.id = json.imdbID;
+
+  $(container).append('<img class="poster" src="'+ json.Poster + '">');
+  $(container).append('<div class="title text">' + json.Title + '</div>');
+  $(container).append('<div class="year text">Year : ' + json.Year + '</div>');
+  $(container).append('<div class="genre text">Genre : ' + json.Genre + '</div>');
+  $(container).append('<div class="director text">Director : ' + json.Director + '</div>');
+  $(container).append('<div class="actors text">Actors : ' + json.Actors + '</div>');
+  $(container).append('<div class="plot text">Plot : ' + json.Plot + '</div>');
+  
+  $('#result').append(container);
 }
 
 
@@ -111,4 +135,5 @@ $( document ).on('ajaxStart', function(){
   $('.loading').hide();
   loading = false;
 });
+
 

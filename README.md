@@ -22,3 +22,5 @@ Create a form which will submit a new movie to the database.  You should validat
 6. Create an infinite scroll that loads another 10 movies and adds them to the bottom every time you scroll down to the bottom of the page.  Your "loading..." icon should come into play here too while waiting for the next batch of movies to be added.
 7. Play around with this new scroll.  What breaks it?
 8. Push your solution to Github and include it below.
+
+[html preview](http://htmlpreview.github.io/?https://github.com/AtActionPark/odin_ajax_scroll/blob/master/main.html)

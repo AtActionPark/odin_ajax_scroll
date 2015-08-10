@@ -117,11 +117,11 @@ function displayMovie(json){
 
   $(container).append('<img class="poster" src="'+ json.Poster + '">');
   $(container).append('<div class="title text">' + json.Title + '</div>');
-  $(container).append('<div class="year text">Year : ' + json.Year + '</div>');
-  $(container).append('<div class="genre text">Genre : ' + json.Genre + '</div>');
-  $(container).append('<div class="director text">Director : ' + json.Director + '</div>');
-  $(container).append('<div class="actors text">Actors : ' + json.Actors + '</div>');
-  $(container).append('<div class="plot text">Plot : ' + json.Plot + '</div>');
+  $(container).append('<div class="year text"><b>Year</b> : ' + json.Year + '</div>');
+  $(container).append('<div class="genre text"><b>Genre</b> : ' + json.Genre + '</div>');
+  $(container).append('<div class="director text"><b>Director</b> : ' + json.Director + '</div>');
+  $(container).append('<div class="actors text"><b>Actors</b> : ' + json.Actors + '</div>');
+  $(container).append('<div class="plot text"><b>Plot</b> : ' + json.Plot + '</div>');
   
   $('#result').append(container);
 }

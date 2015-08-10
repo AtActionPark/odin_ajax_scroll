@@ -20,6 +20,12 @@
   top: 200px;
   left: 10px;
 }
+.thanks{
+  position: fixed;
+  top: 220px;
+  left: 10px;
+  font-size: 12px;
+}
 
 ul {
  list-style: none;
@@ -39,6 +45,7 @@ img {
   min-height:200px;
   max-width: 600px;
   padding:20px 20px;
+  margin-left:250px;
 }
 
 .poster{
@@ -53,5 +60,8 @@ img {
 
 .title{
     font-weight: 700;
+    font-size: 20px;
 }
+
+
 

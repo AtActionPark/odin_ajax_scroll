@@ -23,4 +23,4 @@ Create a form which will submit a new movie to the database.  You should validat
 7. Play around with this new scroll.  What breaks it?
 8. Push your solution to Github and include it below.
 
-[html preview](http://htmlpreview.github.io/?https://github.com/AtActionPark/odin_ajax_scroll/blob/master/main.html)
+[html preview](http://htmlpreview.github.io/?https://github.com/AtActionPark/odin_ajax_scroll/blob/master/index.html)
